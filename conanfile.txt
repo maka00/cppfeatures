@@ -1,0 +1,6 @@
+[requires]
+gtest/1.10.0
+tbb/2020.0
+
+[generators]
+cmake
