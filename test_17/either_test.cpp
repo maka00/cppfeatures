@@ -1,37 +1,11 @@
 #include <gtest/gtest.h>
 #include <random>
-#include <variant>
 #include <boost/range/irange.hpp>
 #include <boost/range/adaptor/indexed.hpp>
 #include <boost/range/adaptor/transformed.hpp>
 #include <boost/range/algorithm/for_each.hpp>
 #include <boost/range/algorithm/copy.hpp>
-
-template< typename L, typename R>
-struct Either {
-    std::variant<L, R> value;
-    explicit Either(L left) : value(std::move(left)) { };
-    explicit Either(R right) : value(std::move(right)) { };
-    Either() = delete;
-    ~Either() = default;
-    Either(Either<L,R>&& other) noexcept : value(std::move(other.value)) { };
-    Either<L,R> operator() (const Either<L,R>& other ) { value = other.value; };
-    Either(const Either<L,R>& other) : value(other.value) { };
-    L& get_left() {
-        return std::get<L>(value);
-    }
-
-    R& get_right() {
-        return std::get<R>(value);
-    }
-
-    constexpr bool has_left() const {
-        return std::holds_alternative<L>(value);
-    }
-    constexpr bool has_right() const {
-        return std::holds_alternative<R>(value);
-    }
-};
+#include <either.h>
 
 TEST(EitherTest, simple) {
     Either<int, std::string> e_one(10);
