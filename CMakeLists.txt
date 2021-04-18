@@ -26,3 +26,4 @@ set( EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/test_17)
+add_subdirectory(${PROJECT_SOURCE_DIR}/test_20)
