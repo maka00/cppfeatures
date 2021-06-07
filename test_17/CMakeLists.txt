@@ -15,7 +15,7 @@ else()
         # nothing special for gcc at the moment
     endif()
 endif()
-set(SOURCES boost_ranges_test.cpp either_test.cpp either.h partitions.cpp)
+set(SOURCES boost_ranges_test.cpp either_test.cpp either.h partitions_test.cpp)
 if (WIN32)
 	SET (Boost_USE_STATIC_LIBS ON)
 endif(WIN32)
