@@ -15,7 +15,7 @@ else ()
         # nothing special for gcc at the moment
     endif ()
 endif ()
-set(SOURCES ranges_test.cpp)
+set(SOURCES ranges_test.cpp coro_test.cpp)
 if (WIN32)
     SET(Boost_USE_STATIC_LIBS ON)
 endif (WIN32)
@@ -72,5 +72,5 @@ target_compile_features(${PROJECT_NAME}
 target_compile_options(${PROJECT_NAME}
         PUBLIC
         PRIVATE
-        -Wall -Wextra -pedantic -Werror
+        -Wall -Wextra -pedantic
         )

@@ -72,5 +72,5 @@ target_compile_features(${PROJECT_NAME}
 target_compile_options(${PROJECT_NAME}
         PUBLIC
         PRIVATE
-        -Wall -Wextra -pedantic -Werror
+        -Wall -Wextra -pedantic
         )
